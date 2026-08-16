@@ -27,7 +27,7 @@ Moria is made in Kotlin and starts support at 26.2. Any versions published for a
 
 Found a bug?
 
-Please join the Discord server and report it - a better issue tracker is on its way.
+Please report the bug here, using the Issues tab.
 
 ---
 
