@@ -1,5 +1,9 @@
 [![Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/modrinth_46h.png)](https://modrinth.com/plugin/moria)
 
+(soon!)
+
+---
+
 Moria is a plugin that adds helpful bits and pieces to servers.
 
 Currently, it has the following commands:
