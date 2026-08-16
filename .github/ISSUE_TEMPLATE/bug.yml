@@ -1,0 +1,104 @@
+name: Bug Report
+description: Report a crash, performance issue, etc.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue.
+
+        Please provide as much detail as possible.
+
+  - type: dropdown
+    id: effect
+    attributes:
+      label: Bug Type
+      description: What effect does the bug have?
+      options:
+        - Crash
+        - Lag / Performance
+        - Unexpected Result
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened & what did you expect to happen?
+      placeholder: |
+        What happened:
+
+        What did you expect:
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How to Reproduce
+      description: Numbered steps on how to reproduce the bug.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Info about your setup (RAM, CPU, OS, etc...)
+      placeholder: |
+        MC Version:
+        Moria Version:
+        Server Software:
+        Other:
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Put any relevant logs here.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: media
+    attributes:
+      label: Media
+      description: Any relevant videos, such as a recording of the bug.
+      placeholder: Drag and drop.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Include anything else you think is necessary.
+      placeholder: |
+        Recent changes:
+        Workarounds:
+        Other information:
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing reports to make sure this bug hasn't already been reported.
+          required: true
+        - label: I have provided enough information for the bug to be investigated.
+          required: true
+        - label: I have removed private information from media I have uploaded (logs, videos...)
+          required: true
