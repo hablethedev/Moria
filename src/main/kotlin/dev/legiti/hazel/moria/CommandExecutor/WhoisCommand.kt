@@ -31,10 +31,6 @@ class WhoisCommand : TabExecutor {
 
         val uuid = target.uniqueId
 
-
-        //Text 1 - #6795e0
-        //Text 2 - #607aba
-
         Moria.vInfo("$sender ran command whois on $target.")
 
         sender.sendMessage(Moria.mm.deserialize(buildString {

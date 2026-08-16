@@ -25,6 +25,12 @@ commands:
   uptime:
     description: Get how long the server has been up for.
     usage: /uptime
+  mspt:
+    description: Get the current mspt
+    usage: /mspt
+  tps:
+    description: Get the current TPS
+    usage: /tps
 
 permissions:
   moria:
@@ -53,3 +59,11 @@ permissions:
   moria.uptime:
     description: Run /uptime
     default: op
+
+  moria.mspt:
+    description: Run /mspt
+    default: op
+
+  moria.tps:
+    description: Run /tps
+    default: true

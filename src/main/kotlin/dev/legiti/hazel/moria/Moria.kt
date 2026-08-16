@@ -1,10 +1,12 @@
 package dev.legiti.hazel.moria
 
 import dev.legiti.hazel.moria.CommandExecutor.MoriaCommand
+import dev.legiti.hazel.moria.CommandExecutor.MsptCommand
 import dev.legiti.hazel.moria.CommandExecutor.PermissionExecutor
 import dev.legiti.hazel.moria.CommandExecutor.PermissionTabExecutor
 import dev.legiti.hazel.moria.CommandExecutor.PingCommand
 import dev.legiti.hazel.moria.CommandExecutor.PositionCommand
+import dev.legiti.hazel.moria.CommandExecutor.TpsCommand
 import dev.legiti.hazel.moria.CommandExecutor.UptimeCommand
 import dev.legiti.hazel.moria.CommandExecutor.WhoisCommand
 import dev.legiti.hazel.moria.Enum.LoggingLevel
@@ -18,9 +20,9 @@ class Moria : JavaPlugin() {
 
     companion object {
         const val VERSION_MAJ = "0"
-        const val VERSION_MIN = "1"
-        const val VERSION_PAT = "1"
-        const val VERSION_ADD = ""
+        const val VERSION_MIN = "2"
+        const val VERSION_PAT = "0"
+        const val VERSION_ADD = "-beta"
 
         var LOGGING_LEVEL = LoggingLevel.NORMAL
 
@@ -41,6 +43,7 @@ class Moria : JavaPlugin() {
             }
         }
 
+        // Used in Uptime
         var joinTimers  = mutableMapOf<UUID, Long>()
         var serverStartTime: Long = 0L
     }
@@ -69,6 +72,7 @@ class Moria : JavaPlugin() {
             "VERBOSE" -> LoggingLevel.VERBOSE
             "NORMAL" -> LoggingLevel.NORMAL
             else -> {
+                // should probably tell the user theyre an imbecile
                 logger.warning("Invalid logging level in config. Using Normal logging.")
                 LoggingLevel.NORMAL
             }
@@ -77,6 +81,7 @@ class Moria : JavaPlugin() {
     }
 
     fun connectCommands() {
+        // This function sucks ass bro
         vInfo("Connecting commands...")
 
         getCommand("moria")?.setExecutor(PermissionExecutor("moria", MoriaCommand()))
@@ -84,6 +89,8 @@ class Moria : JavaPlugin() {
         getCommand("position")?.setExecutor(PermissionExecutor("moria.position", PositionCommand()))
         getCommand("whois")?.setExecutor(PermissionTabExecutor("moria.whois", WhoisCommand()))
         getCommand("uptime")?.setExecutor(PermissionExecutor("moria.uptime", UptimeCommand()))
+        getCommand("mspt")?.setExecutor(PermissionExecutor("moria.mspt", MsptCommand()))
+        getCommand("tps")?.setExecutor(PermissionExecutor("moria.tps", TpsCommand()))
 
         vInfo("Finished connecting commands.")
     }
