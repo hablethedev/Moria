@@ -1,0 +1,4 @@
+# How much logging should there be?
+# Unless you're reporting a bug, generally you should keep this at NORMAL.
+# Valid options: NORMAL, VERBOSE
+logging: NORMAL

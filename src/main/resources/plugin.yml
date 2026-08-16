@@ -1,0 +1,55 @@
+name: Moria
+description: $description
+version: '${version}'
+
+main: dev.legiti.hazel.moria.Moria
+api-version: '26.2'
+load: POSTWORLD
+
+authors: [ hablethedev ]
+website: https://hazel.legiti.dev
+
+commands:
+  moria:
+    description: Moria info.
+    usage: /moria
+  ping:
+    description: Get a player's ping.
+    usage: /ping
+  position:
+    description: Get info about your current position.
+    usage: /position
+  whois:
+    description: Get info about a player.
+    usage: /whois <player>
+  uptime:
+    description: Get how long the server has been up for.
+    usage: /uptime
+
+permissions:
+  moria:
+    description: Do anything with Moria
+    default: true
+
+  moria.moria:
+    description: Run /moria
+    default: true
+
+  moria.ping:
+    description: Run /ping
+    default: true
+  moria.ping.others:
+    description: Check another player's ping
+    default: op
+
+  moria.position:
+    description: Run /position
+    default: true
+
+  moria.whois:
+    description: Run /whois
+    default: op
+
+  moria.uptime:
+    description: Run /uptime
+    default: op
