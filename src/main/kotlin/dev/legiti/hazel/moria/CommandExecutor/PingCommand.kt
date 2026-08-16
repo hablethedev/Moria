@@ -45,7 +45,7 @@ class PingCommand : TabExecutor {
 
             Moria.vInfo("$sender ran command ping on $target with no arguments, ${target.ping}")
 
-            sender.sendMessage(Moria.mm.deserialize("<#60 if (args.size != 1) return 7aba>${target.name}<#6795e0>'s ping is <#607aba>${target.ping}ms<#6795e0>."))
+            sender.sendMessage(Moria.mm.deserialize("${target.name}<#6795e0>'s ping is <#607aba>${target.ping}ms<#6795e0>."))
             return true
         }
 

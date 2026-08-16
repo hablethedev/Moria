@@ -19,7 +19,7 @@ class Moria : JavaPlugin() {
     companion object {
         const val VERSION_MAJ = "0"
         const val VERSION_MIN = "1"
-        const val VERSION_PAT = "0"
+        const val VERSION_PAT = "1"
         const val VERSION_ADD = ""
 
         var LOGGING_LEVEL = LoggingLevel.NORMAL
