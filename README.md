@@ -2,6 +2,8 @@
 
 (soon!)
 
+[![Hangar](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/hangar_46h.png)](https://hangar.papermc.io/hablethedev/moria)
+
 ---
 
 Moria is a plugin that adds helpful bits and pieces to servers.
@@ -34,6 +36,8 @@ Please report the bug at https://github.com/hablethedev/moria/issues.
 Regarding Moria in content use: if you create a video about Moria, firstly, thank you! Secondly, please credit me in a prominent location, with a link to this Modrinth page. I am not bothered about earning revenue, you may monetize how you want.
 
 You may not repackage Moria in any form or place Moria behind a paywall.
+
+Please see the LICENSE for further details.
 
 ---
 
