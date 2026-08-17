@@ -51,6 +51,8 @@ class WhoisCommand : TabExecutor {
         label: String,
         args: Array<out String>
     ): List<String?> {
+        if (args.size != 1) return emptyList()
+
         return Bukkit.getOnlinePlayers().map{ it.name }.filter{ it.startsWith(args[0],ignoreCase=true) }
     }
 }

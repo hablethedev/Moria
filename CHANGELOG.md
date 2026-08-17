@@ -11,6 +11,12 @@
 ### Removed:
 - Some comments
 
+### Changed:
+- /whois
+- - Now returns empty list correctly
+- /tps & /mspt data gathering
+- - Return dummy data if array passed in is empty
+
 ## v0.1.1
 "Bugfix"
 

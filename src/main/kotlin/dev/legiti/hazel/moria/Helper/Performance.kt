@@ -1,9 +1,9 @@
 package dev.legiti.hazel.moria.Helper
 
+import dev.legiti.hazel.moria.Moria
 import org.bukkit.Bukkit
 import java.math.BigDecimal
 import java.math.RoundingMode
-import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
 data class TickPerformance(
@@ -18,6 +18,20 @@ data class TickPerformance(
 )
 
 fun LongArray.getTickPerformance(): TickPerformance {
+    if (this.isEmpty()) {
+        Moria.vWarn("LongArray passed into GTP is empty? Returning dummy data")
+        return TickPerformance(
+            meanMspt = 0.0,
+            medianMspt = 0.0,
+            percentile95Mspt = 0.0,
+            maxMspt = 0.0,
+            minMspt = 0.0,
+            standardDeviationMspt = 0.0,
+            tps = 0.0,
+            realTps = 0.0
+        )
+    }
+
     val mspts = map { it / 1000000.0 }.sorted()
 
     val mean = mspts.average()

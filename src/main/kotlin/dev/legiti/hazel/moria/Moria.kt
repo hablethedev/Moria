@@ -22,7 +22,7 @@ class Moria : JavaPlugin() {
         const val VERSION_MAJ = "0"
         const val VERSION_MIN = "2"
         const val VERSION_PAT = "0"
-        const val VERSION_ADD = "-beta"
+        const val VERSION_ADD = ""
 
         var LOGGING_LEVEL = LoggingLevel.NORMAL
 
@@ -72,7 +72,7 @@ class Moria : JavaPlugin() {
             "VERBOSE" -> LoggingLevel.VERBOSE
             "NORMAL" -> LoggingLevel.NORMAL
             else -> {
-                // should probably tell the user theyre an imbecile
+                // TODO: Inform user better than this probably
                 logger.warning("Invalid logging level in config. Using Normal logging.")
                 LoggingLevel.NORMAL
             }
@@ -81,7 +81,7 @@ class Moria : JavaPlugin() {
     }
 
     fun connectCommands() {
-        // This function sucks ass bro
+        // TODO: Make this function way better, DRY
         vInfo("Connecting commands...")
 
         getCommand("moria")?.setExecutor(PermissionExecutor("moria", MoriaCommand()))

@@ -1,0 +1,46 @@
+name: Label Bug Type
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    if: contains(github.event.issue.labels.*.name, 'bug')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Determine bug type
+        id: bug-type
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          case "$BODY" in
+            *"### Bug Type"$'\n\n'"Crash"*)
+              echo "label=crash" >> "$GITHUB_OUTPUT"
+              ;;
+            *"### Bug Type"$'\n\n'"Lag / Performance"*)
+              echo "label=lag" >> "$GITHUB_OUTPUT"
+              ;;
+            *"### Bug Type"$'\n\n'"Unexpected Result"*)
+              echo "label=unexpected" >> "$GITHUB_OUTPUT"
+              ;;
+            *"### Bug Type"$'\n\n'"Other"*)
+              echo "label=other" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - name: Add bug type label
+        if: steps.bug-type.outputs.label != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+          LABEL: ${{ steps.bug-type.outputs.label }}
+        run: |
+          gh issue edit "$ISSUE_NUMBER" \
+            --repo "$REPO" \
+            --add-label "$LABEL"

@@ -1,0 +1,176 @@
+Moria Source-Available License v1 (Short)
+Copyright 2026-present hablethedev
+
+You may:
+- Use Moria on a monetized Minecraft server
+- Study the source code
+- Modify and compile the source code for your use
+- Make content featuring Moria, including monetized content
+
+You may not:
+- Redistribute Moria (source, binaries, etc)
+- Distribute your own fork
+- Sell Moria / put Moria behind a paywall or similar
+- Put Moria in a modpack or similar directly (a link is okay)
+- Imply endorsement without permission
+- Transfer rights
+- Violate the license
+- - Violating the license terminates rights given to you by the license.
+
+You must:
+- If making content, attribute hablethedev prominently & place a link to the Modrinth page.
+- If using Moria on a server, using the built in credit (/moria) is fine.
+- Be aware that hablethedev can grant individual exceptions in writing
+- Be aware that future versions may use a different license
+
+---
+
+Moria Source-Available License v1
+Copyright 2026-present hablethedev
+
+0. Definitions
+
+In this file:
+
+"Software" refers to the Minecraft plugin Moria, including source code, binaries, and official releases.
+
+"Author" refers to hablethedev, the holder of the copyright for Moria.
+
+"Modrinth Page" refers to the following page for the Software:
+https://modrinth.com/plugin/moria
+
+"Content" refers to public media or creative works that display, demonstrate, use, or otherwise feature the Software, including livestreams, screenshots, articles, videos, and similar.
+
+"Modified Version" refers to any version of the Software that has been modified, patched, forked, rebuilt, or otherwise derived from the Software.
+
+"Minecraft Server" refers to any software running a server that Minecraft clients can connect to. This includes PaperMC, Pumpkin, Bukkit, and other similar software.
+
+1. Copyright
+
+The Software is protected by copyright laws. Except for any permissions expressly granted by this License, all rights have been reserved by the Author.
+
+2. Source Code
+
+The Author makes the source code publicly available for the purposes of transparency, learning, inspection, and private modification.
+
+Making the source code available does not grant permission to redistribute the Software or any Modified Version.
+
+3. Permission to Use
+
+You are granted permission to:
+
+1. Download and use official releases of the Software on Minecraft Servers,
+2. Inspect and study the Source Code,
+3. Modify the Source Code for private use,
+4. Build private Modified Versions for your own use,
+5. Use the Software in Content, including Content that is monetized or commercially supported.
+
+These permissions are granted provided that you comply with all terms of this License.
+
+4. Server Use
+
+You may install and use the Software on a Minecraft Server, including commercial or monetized servers.
+
+A server may accept donations, sell cosmetic items, sell subscriptions, or otherwise monetize its operation according to the Mojang EULA(1), whilst using the Software.
+
+The Software may not be sold or redistributed as part of said service.
+
+The Software's built in credit satisfies the attribution requirement for server use.
+
+5. Content Creation
+
+You may create, monetize, and publish Content that uses or features the Software.
+
+For Content that primarily features the Software, you must provide attribution to the Author.
+
+For video Content, attribution must satisfy both of the following requirements:
+1. The Author or the Software must be credited prominently within the video, either visually or audibly, and
+2. The Content's description (or other where applicable) must contain a direct link to the Modrinth Page.
+
+For other Content, primarily featuring the Software, where a description is unavailable, the attribution should instead be placed in an equivalently reasonable & prominent location, such as on-screen, or in a profile section, or other publicly accessible information associated with the Content.
+
+The attribution requirement does not prohibit forms of monetization, advertisements, donations, or other forms of revenue associated with the Content.
+
+6. Redistribution
+
+You may not redistribute, publish, mirror, upload, sell or otherwise provide copies of the Software to third parties.
+
+This prohibition applies to both source code and binaries.
+
+You may not:
+1. Reupload an official release to another distribution platform,
+2. Sell or otherwise charge for the Software,
+3. Place downloads of the Software behind a paywall, ad link, donation requirement, or similar access restriction,
+4. Include the Software in a downloadable "modpack", "setup guide", or equivalent where doing so is equivalent to redistribution of the Software,
+4.1. This excludes listing the Software as a dependency (or equivalent), provided users download the Software from official distribution channels,
+5. Distribute a Modified Version,
+6. Publish or distribute a fork of the Software,
+7. Distribute patches, builds, or other files where the primary purpose is to provide a Modified Version of the Software to third parties.
+
+The official distribution channels designated by the Author are the only permitted channels for obtaining official releases of the Software.
+
+7. Private Modifications
+
+You may modify the Software for your own private use.
+
+You may compile and run your Modified Version privately.
+
+You may not provide the Modified Version, or a compiled copy of it, to another person, company, or third party.
+
+8. No Right Transfer
+
+No permission granted by this License may be transferred to another person.
+
+Receiving access to the source code does not grant the recipient any right to redistribute a Modified Version of the Software, or the Software.
+
+9. Contribution
+
+The Author is under no obligation to accept, review, merge, or otherwise incorporate modifications, patches, suggestions, or other contributions.
+
+Submission of a contribution does not create an obligation for the Author to use or distribute said contribution.
+
+Any contribution accepted and incorporated into the Software may be distributed by the Author under this License or another license selected by the Author.
+
+10. Branding
+
+This License does not grant permission to use the Author's logos, project branding, or other distinctive marks except as reasonably needed to identify the Software or provide the attribution required by this License.
+
+You may not imply that the Author endorses, or is affiliated with your Content, product, or service, without explicit written permission.
+
+11. No Warranty
+
+The software is provided "as is", without warranty of any kind, express or implied, to the extent permitted by applicable laws.
+
+In no event shall the Author be liable for any claim, damages, consequences, or other liability whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the License.
+
+12. Termination
+
+Your rights under this License terminate automatically if you violate said License's terms.
+
+Upon termination, you must cease exercising permissions and rights granted by this License, and where applicable, delete copies of the Software or Modified Versions that you possess.
+
+Rights that cannot be legally terminated under applicable law are unaffected.
+
+13. Law
+
+This License shall be interpreted in accordance with laws applicable to the Author, except where applicable law requires otherwise.
+
+14. License Notice
+
+A copy of this License must accompany any permitted copy of the Software's source code.
+
+The Software may be distributed by the Author under different terms in future releases. Releases remain governed by the license that accompanies said release.
+
+15. Exceptions & Additional Permissions
+
+The Author may, at their discretion, grant specific individuals or organizations additional permissions otherwise not permitted by this License.
+
+Any such permission must be explicitly granted by the Author in writing. Exceptions granted to one individual or organization does not grant the same permission/exception to any other individuals or organizations, and does not modify this License for others.
+
+Any exception or additional permission that is not explicitly granted by the Author in writing shall be considered invalid, and have no effect. No individual or organization may claim or imply that they have received an exception or additional permission unless such permission was granted to them directly by the Author.
+
+The Author may specify the duration, scope, and conditions of any additional permission.
+
+Copyright (c) 2026-present hablethedev. All rights reserved.
+
+(1) https://www.minecraft.net/en-us/eula

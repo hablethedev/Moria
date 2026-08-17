@@ -36,5 +36,9 @@ tasks {
         filesMatching("plugin.yml") {
             expand(props)
         }
+
+        from(projectDir) {
+            include("LICENSE")
+        }
     }
 }
