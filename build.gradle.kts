@@ -19,6 +19,10 @@ kotlin {
 }
 
 tasks {
+    shadowJar {
+        archiveClassifier.set("")
+    }
+
     build {
         dependsOn(shadowJar)
     }

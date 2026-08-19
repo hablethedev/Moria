@@ -41,4 +41,4 @@ Please see the LICENSE for further details.
 
 ---
 
-Regarding compatibility: Moria is only tested on the latest (as of release) Paper build. Spigot & Bukkit support is theoretical. If an issue occurs on either of these platforms, I will be happy to fix it, but please be aware support for Spigot and/or Bukkit may stop at any point. I will not provide support for server software such as Arclight or mods such as Cardboard.
+Regarding compatibility: Moria is only tested on the latest (as of release) Paper build. Spigot & Bukkit support will not be provided. I will not provide support for server software such as Arclight or mods such as Cardboard.
