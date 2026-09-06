@@ -19,7 +19,7 @@ Currently, it has the following commands:
 
 Although Moria does not contain many features currently, it will continue to expand.
 
-Moria is, and will always be (until archived), a work-in-progress plugin. Sadly, Moria is currently not open-source, and is instead ARR. I will open-source the plugin when I believe the code is up to scratch - currently it is messy and not very good overall.
+Moria is, and will always be (until archived), a work-in-progress plugin. Moria is, and will always be (until archived), a work-in-progress plugin. ~~Sadly, Moria is currently not open-source, and is instead ARR. I will open-source the plugin when I believe the code is up to scratch - currently it is messy and not very good overall.~~ Moria is now source-available.
 
 Moria does not, and will not, plan to contain any telemetry.
 
