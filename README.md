@@ -1,7 +1,4 @@
 [![Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/modrinth_46h.png)](https://modrinth.com/plugin/moria)
-
-(soon!)
-
 [![Hangar](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/hangar_46h.png)](https://hangar.papermc.io/hablethedev/moria)
 
 ---
