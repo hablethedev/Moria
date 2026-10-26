@@ -1,3 +1,8 @@
+# THIS IS AN OLD BRANCH
+You are currently viewing an OLD BRANCH!
+This version ONLY SUPPORTS Paper 26.2.
+Switch to your desired branch above.
+
 [![Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/modrinth_46h.png)](https://modrinth.com/plugin/moria)
 [![Hangar](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/hangar_46h.png)](https://hangar.papermc.io/hablethedev/moria)
 
