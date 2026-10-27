@@ -25,7 +25,7 @@ class BukkitMoriaPlayer(private val player: org.bukkit.entity.Player) : MoriaPla
                 world = it.world.key.toString(),
                 x = it.x, y = it.y, z = it.z,
                 yaw = it.yaw, pitch = it.pitch,
-                biome = it.block.biome.asMoriaBiome()
+                biome = it.block.biome.translationKey()
             )
         }
 

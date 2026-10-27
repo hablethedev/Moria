@@ -6,6 +6,7 @@ import dev.legiti.hazel.moria.core.compat.MoriaPlayer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.level.GameType
 import java.util.UUID
+import kotlin.jvm.optionals.getOrNull
 
 class FabricMoriaPlayer(private val player: ServerPlayer): MoriaPlayer {
     override val name: String = player.scoreboardName
@@ -25,7 +26,8 @@ class FabricMoriaPlayer(private val player: ServerPlayer): MoriaPlayer {
             world = player.level().dimension().identifier().toString(),
             x = player.x, y = player.y, z = player.z,
             yaw = player.yRot, pitch = player.xRot,
-            biome = player.level().getBiome(player.blockPosition()).asMoriaBiome()
+            biome = player.level().getBiome(player.blockPosition()).unwrapKey().getOrNull()?.identifier()?.toLanguageKey("biome") ?: "multiplayer.status.unknown"
+            // We can just piggyback off of this. Should work fine.
         )
 
     override val ping: Int

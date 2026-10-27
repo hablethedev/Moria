@@ -2,6 +2,8 @@ package dev.legiti.hazel.moria.core.logic.command
 
 import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaSender
+import dev.legiti.hazel.moria.core.logic.command.helper.facing
+import dev.legiti.hazel.moria.core.logic.command.helper.xyzPretty
 import org.incendo.cloud.CommandManager
 import kotlin.math.floor
 
@@ -18,7 +20,7 @@ class PositionCommand(private val platform: MoriaPlatform): MoriaCommand {
                         platform.mm.deserialize(buildString {
                             append("<#6795e0>Position: <#607aba>${player.position.xyzPretty()}</#6795e0><br>")
                             append("<#6795e0>Facing: <#607aba>${player.position.facing()}</#6795e0><br>")
-                            append("<#6795e0>Biome: <#607aba>${player.position.biome.pretty()}</#6795e0><br>")
+                            append("<#6795e0>Biome: <#607aba><lang:${player.position.biome}></#6795e0><br>")
                             append("<#6795e0>Chunk: <#607aba>${floor(player.position.x / 16).toInt()}, ${floor(player.position.z / 16).toInt()}</#6795e0>")
                         })
                     }

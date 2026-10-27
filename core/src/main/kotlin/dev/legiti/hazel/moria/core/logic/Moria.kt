@@ -8,7 +8,7 @@ class Moria(private val platform: MoriaPlatform) {
     companion object {
         const val VERSION_MAJ = "0"
         const val VERSION_MIN = "3"
-        const val VERSION_PAT = "0"
+        const val VERSION_PAT = "1"
         const val VERSION_ADD = ""
 
         var serverStartTime: Long = 0L

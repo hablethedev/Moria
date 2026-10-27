@@ -1,6 +1,5 @@
-package dev.legiti.hazel.moria.core.logic.command
+package dev.legiti.hazel.moria.core.logic.command.helper
 
-import dev.legiti.hazel.moria.core.compat.MoriaBiome
 import dev.legiti.hazel.moria.core.compat.MoriaLocation
 import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaPlayer
@@ -89,8 +88,3 @@ fun MoriaPlayer.sessionDuration(): Duration? {
     val joinTime = Moria.joinTimes[uuid] ?: return null
     return Duration.ofNanos(System.nanoTime() - joinTime)
 }
-
-fun MoriaBiome.pretty(): String =
-    id.split("_").joinToString(" ") {
-        word -> word.replaceFirstChar { it.uppercase() }
-    }
