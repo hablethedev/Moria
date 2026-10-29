@@ -19,6 +19,22 @@
             </SchemaInfo>
           </value>
         </entry>
+        <entry key="Sponge Mixin configuration">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="Sponge Mixin configuration" />
+              <option name="relativePathToSchema" value="https://www.schemastore.org/sponge-mixins.json" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="fabric/src/main/resources/moria.mixins.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
         <entry key="fabric.mod.json">
           <value>
             <SchemaInfo>

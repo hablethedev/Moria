@@ -5,6 +5,8 @@ import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaPlayer
 import dev.legiti.hazel.moria.core.compat.MoriaSender
 import dev.legiti.hazel.moria.core.logic.Moria
+import org.incendo.cloud.Command
+import org.incendo.cloud.CommandManager
 import org.incendo.cloud.suggestion.SuggestionProvider
 import java.math.BigDecimal
 import java.time.Instant
@@ -87,4 +89,12 @@ fun LongArray.tpsFromTimes(target: Float = 20F): Double {
 fun MoriaPlayer.sessionDuration(): Duration? {
     val joinTime = Moria.joinTimes[uuid] ?: return null
     return Duration.ofNanos(System.nanoTime() - joinTime)
+}
+
+fun CommandManager<MoriaSender>.moriaCommandBuilder(platform: MoriaPlatform, name: String): Command.Builder<MoriaSender> {
+    if (platform.NAME == "fabric") {
+        return commandBuilder("moria:$name",name)
+    } else {
+        return commandBuilder(name)
+    }
 }

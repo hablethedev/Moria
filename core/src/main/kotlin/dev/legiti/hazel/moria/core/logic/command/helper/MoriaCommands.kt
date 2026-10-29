@@ -2,6 +2,8 @@ package dev.legiti.hazel.moria.core.logic.command.helper
 
 import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaSender
+import dev.legiti.hazel.moria.core.logic.command.AfkCommand
+import dev.legiti.hazel.moria.core.logic.command.ConfigReloadCommand
 import dev.legiti.hazel.moria.core.logic.command.MainMoriaCommand
 import dev.legiti.hazel.moria.core.logic.command.MoriaCommand
 import dev.legiti.hazel.moria.core.logic.command.MsptCommand
@@ -21,6 +23,8 @@ class MoriaCommands(private val platform: MoriaPlatform) {
         TpsCommand(platform),
         PingCommand(platform),
         PositionCommand(platform),
+        AfkCommand(platform),
+        ConfigReloadCommand(platform),
     )
 
     fun register(manager: CommandManager<MoriaSender>) {

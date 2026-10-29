@@ -31,8 +31,6 @@ class FabricMoriaPlayer(private val player: ServerPlayer): MoriaPlayer {
             world = player.level().dimension().identifier().toString(),
             x = player.x, y = player.y, z = player.z,
             yaw = player.yRot, pitch = player.xRot,
-            biome = player.level().getBiome(player.blockPosition()).unwrapKey().getOrNull()?.identifier()?.toLanguageKey("biome") ?: "multiplayer.status.unknown"
-            // We can just piggyback off of this. Should work fine.
         )
 
     override val ping: Int
@@ -47,5 +45,20 @@ class FabricMoriaPlayer(private val player: ServerPlayer): MoriaPlayer {
 
     override fun sendMessage(text: Component) {
         player.sendMessage(text)
+    }
+
+    override val biome
+        get() = player.level().getBiome(player.blockPosition()).unwrapKey().getOrNull()?.identifier()?.toLanguageKey("biome") ?: "multiplayer.status.unknown"
+    // We can just piggyback off of this. Should work fine.
+
+    override val lastActionMillis: Long
+        get() = player.lastActionTime
+
+    override fun addTag(tag: String) {
+        player.addTag(tag)
+    }
+
+    override fun removeTag(tag: String) {
+        player.removeTag(tag)
     }
 }

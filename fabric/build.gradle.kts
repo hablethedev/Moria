@@ -33,6 +33,11 @@ dependencies {
     include(cloudFabric)
     implementation(cloudFabric)
 
+    val ktoml = "com.akuleshov7:ktoml-core:0.7.1"
+
+    implementation(ktoml)
+    include(ktoml)
+
     testImplementation(kotlin("test"))
 }
 

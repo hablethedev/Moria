@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "moria-fabric",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "name": "MoriaFabric",
   "description": "Bits and pieces for Fabric servers.",
   "authors": ["hablethedev"],
@@ -25,5 +25,8 @@
         "value":"dev.legiti.hazel.moria.fabric.MoriaFabric"
       }
     ]
-  }
+  },
+  "mixins": [
+    "moria.mixins.json"
+  ]
 }

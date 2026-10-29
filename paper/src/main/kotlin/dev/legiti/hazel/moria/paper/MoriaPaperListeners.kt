@@ -6,6 +6,7 @@ import dev.legiti.hazel.moria.paper.adapters.BukkitMoriaPlayer
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
+import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.event.player.PlayerQuitEvent
 
 class MoriaPaperListeners(private val plugin: MoriaPaper): MoriaEvents {
@@ -30,7 +31,16 @@ class MoriaPaperListeners(private val plugin: MoriaPaper): MoriaEvents {
     override fun schedule(seconds: Double, runnable: () -> Unit) {
         plugin.server.scheduler.runTaskTimer(plugin,
             Runnable { runnable() },
-            (seconds * (plugin.targetTickRate / 2)).toLong() /* wait 1/2 of time first */,
+            ((seconds / 2) * (plugin.targetTickRate)).toLong() /* wait 1/2 of time first */,
             (seconds * (plugin.targetTickRate)).toLong() )
+    }
+
+    override fun onPlayerMove(handler: (MoriaPlayer) -> Unit) {
+        plugin.server.pluginManager.registerEvents(object : Listener {
+            @EventHandler
+            fun on(e: PlayerMoveEvent) {
+                handler(BukkitMoriaPlayer(e.player))
+            }
+        }, plugin)
     }
 }

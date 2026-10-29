@@ -8,6 +8,7 @@ import org.bukkit.GameMode
 import kotlin.time.Duration
 import java.util.UUID
 import kotlin.time.toKotlinDuration
+import org.bukkit.craftbukkit.entity.CraftPlayer
 
 class BukkitMoriaPlayer(private val player: org.bukkit.entity.Player) : MoriaPlayer {
     override val uuid: UUID = player.uniqueId
@@ -27,10 +28,12 @@ class BukkitMoriaPlayer(private val player: org.bukkit.entity.Player) : MoriaPla
             MoriaLocation(
                 world = it.world.key.toString(),
                 x = it.x, y = it.y, z = it.z,
-                yaw = it.yaw, pitch = it.pitch,
-                biome = it.block.biome.translationKey()
+                yaw = it.yaw, pitch = it.pitch
             )
         }
+
+    override val biome: String
+        get() = player.location.block.biome.translationKey()
 
     override val ping: Int
         get() = player.ping
@@ -44,5 +47,15 @@ class BukkitMoriaPlayer(private val player: org.bukkit.entity.Player) : MoriaPla
 
     override fun sendMessage(text: Component) {
         player.sendMessage(text)
+    }
+
+    override val lastActionMillis: Long
+        get() = (player as CraftPlayer).handle.lastActionTime
+
+    override fun addTag(tag: String) {
+        player.addScoreboardTag(tag)
+    }
+    override fun removeTag(tag: String) {
+        player.removeScoreboardTag(tag)
     }
 }

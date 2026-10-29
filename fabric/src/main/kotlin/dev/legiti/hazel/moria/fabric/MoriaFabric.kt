@@ -9,6 +9,7 @@ import dev.legiti.hazel.moria.fabric.adapters.FabricMoriaPlayer
 import dev.legiti.hazel.moria.fabric.adapters.FabricMoriaSender
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
+import net.fabricmc.loader.api.FabricLoader
 import net.kyori.adventure.text.minimessage.MiniMessage
 import net.minecraft.SharedConstants
 import net.minecraft.commands.CommandSourceStack
@@ -20,6 +21,7 @@ import org.incendo.cloud.execution.ExecutionCoordinator
 import org.incendo.cloud.fabric.FabricServerCommandManager
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import java.nio.file.Path
 
 class MoriaFabric : MoriaPlatform,  ModInitializer {
     override fun onInitialize() {
@@ -71,6 +73,10 @@ class MoriaFabric : MoriaPlatform,  ModInitializer {
         LOGGER.info("[MoriaFabric] $msg")
     }
 
+    override fun warn(msg: String) {
+        LOGGER.warn("[MoriaFabric] $msg")
+    }
+
     override fun onlinePlayers(): Collection<MoriaPlayer> =
         server?.playerList?.players?.map { FabricMoriaPlayer(it) }.orEmpty()
 
@@ -85,4 +91,6 @@ class MoriaFabric : MoriaPlatform,  ModInitializer {
     override var targetTickRate: Float
         get() = server?.tickRateManager()?.tickrate() ?: return 0F
         set(value) {server?.tickRateManager()?.setTickRate(value)}
+
+    override val configDirPath: Path = FabricLoader.getInstance().configDir.toAbsolutePath().normalize()
 }

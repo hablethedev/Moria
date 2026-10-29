@@ -9,8 +9,12 @@ interface MoriaPlayer {
     val name: String
     val gamemode: MoriaGamemode
     val position: MoriaLocation
+    val biome: String // should slightly optimize afk handling?
     val ping: Int
     val afkDuration: Duration
+    val lastActionMillis: Long
     fun resetAfkDuration()
     fun sendMessage(text: Component)
+    fun addTag(tag: String)
+    fun removeTag(tag: String)
 }

@@ -1,5 +1,4 @@
 [![Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/modrinth_46h.png)](https://modrinth.com/plugin/moria)
-[![Hangar](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/compact/available/hangar_46h.png)](https://hangar.papermc.io/hablethedev/moria)
 
 ---
 
@@ -13,6 +12,10 @@ Currently, it has the following commands:
 |position|Get info about a player's position|moria.position|
 |whois|Get info about a player|moria.whois|
 |uptime|Get info about the server's uptime|moria.uptime|
+|tps|Get the current TPS.|moria.tps|
+|mspt|Get detailed info about the current TPS/MSPT.|moria.mspt|
+|afk|Go afk. Also triggers automatically.|moria.afk|
+|reloadmoria|Reload Moria config.|moria.reload|
 
 Although Moria does not contain many features currently, it will continue to expand.
 
@@ -20,7 +23,11 @@ Moria is, and will always be (until archived), a work-in-progress plugin. Moria 
 
 Moria does not, and will not, plan to contain any telemetry.
 
-Moria(MP) is made in Kotlin and starts support at 26.3. Any versions published for any Minecraft version lower are backports and you should not expect the same level of support.
+Moria(MP) is made in Kotlin and starts support at 26.3. Any versions published for any Minecraft version lower are backports, and you should not expect the same level of support.
+
+Moria has a config which will be located in config/ or plugins/ (depending on your platform).
+It is a .toml file and should be self-explanatory.
+If an invalid value is set and the server is starting up, it will be set to the default, or the previous value if the server was running.
 
 ---
 

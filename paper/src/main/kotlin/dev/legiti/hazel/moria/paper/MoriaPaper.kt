@@ -15,6 +15,7 @@ import org.incendo.cloud.CommandManager
 import org.incendo.cloud.SenderMapper
 import org.incendo.cloud.execution.ExecutionCoordinator
 import org.incendo.cloud.paper.PaperCommandManager
+import java.nio.file.Path
 
 class MoriaPaper : MoriaPlatform, JavaPlugin() {
     override val NAME = "paper"
@@ -50,6 +51,10 @@ class MoriaPaper : MoriaPlatform, JavaPlugin() {
         logger.info(msg)
     }
 
+    override fun warn(msg: String) {
+        logger.warning(msg)
+    }
+
     override fun onlinePlayers(): Collection<MoriaPlayer> =
         Bukkit.getOnlinePlayers().map{ BukkitMoriaPlayer(it) }
 
@@ -59,4 +64,6 @@ class MoriaPaper : MoriaPlatform, JavaPlugin() {
     override var targetTickRate: Float
         get() = Bukkit.getServerTickManager().tickRate
         set(value) {Bukkit.getServerTickManager().setTickRate(value)}
+
+    override val configDirPath: Path = dataFolder.toPath()
 }

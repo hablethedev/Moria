@@ -2,6 +2,7 @@ package dev.legiti.hazel.moria.core.logic.command
 
 import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaSender
+import dev.legiti.hazel.moria.core.logic.command.helper.moriaCommandBuilder
 import dev.legiti.hazel.moria.core.logic.command.helper.onlinePlayerSuggestions
 import dev.legiti.hazel.moria.core.logic.command.helper.pretty
 import dev.legiti.hazel.moria.core.logic.command.helper.sessionDuration
@@ -12,7 +13,7 @@ import org.incendo.cloud.parser.standard.StringParser
 class WhoisCommand(private val platform: MoriaPlatform) : MoriaCommand {
     override fun register(manager: CommandManager<MoriaSender>) {
         manager.command(
-            manager.commandBuilder("whois")
+            manager.moriaCommandBuilder(platform,"whois")
                 .permission("moria.whois")
                 .required(
                     CommandComponent.builder<MoriaSender,String>("player", StringParser.stringParser())

@@ -3,6 +3,7 @@ package dev.legiti.hazel.moria.fabric
 import dev.legiti.hazel.moria.core.compat.MoriaEvents
 import dev.legiti.hazel.moria.core.compat.MoriaPlayer
 import dev.legiti.hazel.moria.fabric.adapters.FabricMoriaPlayer
+import dev.legiti.hazel.moria.fabric.specialized.FabricPlayerMoveEvents
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 
@@ -28,5 +29,9 @@ class MoriaFabricListeners : MoriaEvents {
                 runnable()
             }
         }
+    }
+
+    override fun onPlayerMove(handler: (MoriaPlayer) -> Unit) {
+        FabricPlayerMoveEvents.register(handler)
     }
 }

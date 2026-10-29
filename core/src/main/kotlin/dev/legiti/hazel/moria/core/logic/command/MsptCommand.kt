@@ -3,13 +3,14 @@ package dev.legiti.hazel.moria.core.logic.command
 import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaSender
 import dev.legiti.hazel.moria.core.logic.command.helper.getTickPerformance
+import dev.legiti.hazel.moria.core.logic.command.helper.moriaCommandBuilder
 import dev.legiti.hazel.moria.core.logic.command.helper.round
 import org.incendo.cloud.CommandManager
 
 class MsptCommand(private val platform: MoriaPlatform): MoriaCommand {
     override fun register(manager: CommandManager<MoriaSender>) {
         manager.command(
-            manager.commandBuilder("mspt").permission("moria.mspt").handler { ctx ->
+            manager.moriaCommandBuilder(platform,"mspt").permission("moria.mspt").handler { ctx ->
                 val tickPerf = platform.getTickTimesNano().getTickPerformance(platform).round(2)
                 ctx.sender().audience.sendMessage(
                     platform.mm.deserialize(buildString {

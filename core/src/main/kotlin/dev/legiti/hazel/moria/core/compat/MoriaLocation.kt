@@ -7,6 +7,4 @@ data class MoriaLocation(
     val z: Double,
     val yaw: Float = 0f,
     val pitch: Float = 0f,
-
-    val biome: String
 )

@@ -5,12 +5,13 @@ import dev.legiti.hazel.moria.core.compat.MoriaSender
 import dev.legiti.hazel.moria.core.logic.Moria
 import dev.legiti.hazel.moria.core.logic.command.helper.formatAsDateTime
 import dev.legiti.hazel.moria.core.logic.command.helper.formatAsTime
+import dev.legiti.hazel.moria.core.logic.command.helper.moriaCommandBuilder
 import org.incendo.cloud.CommandManager
 
 class UptimeCommand(private val platform: MoriaPlatform) : MoriaCommand {
     override fun register(manager: CommandManager<MoriaSender>) {
         manager.command(
-            manager.commandBuilder("uptime").permission("moria.uptime").handler { ctx ->
+            manager.moriaCommandBuilder(platform,"uptime").permission("moria.uptime").handler { ctx ->
                 ctx.sender().audience.sendMessage(
                     platform.mm.deserialize(buildString {
                         append("<#6795e0>Uptime: <#607aba>${(System.currentTimeMillis() - Moria.serverStartTime).formatAsTime()}<br>")
