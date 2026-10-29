@@ -3,10 +3,15 @@ package dev.legiti.hazel.moria.fabric.adapters
 import dev.legiti.hazel.moria.core.compat.MoriaGamemode
 import dev.legiti.hazel.moria.core.compat.MoriaLocation
 import dev.legiti.hazel.moria.core.compat.MoriaPlayer
+import net.kyori.adventure.text.Component
 import net.minecraft.server.level.ServerPlayer
+import net.minecraft.util.Util
 import net.minecraft.world.level.GameType
 import java.util.UUID
 import kotlin.jvm.optionals.getOrNull
+import kotlin.time.Duration
+import kotlin.time.DurationUnit
+import kotlin.time.toDuration
 
 class FabricMoriaPlayer(private val player: ServerPlayer): MoriaPlayer {
     override val name: String = player.scoreboardName
@@ -32,4 +37,15 @@ class FabricMoriaPlayer(private val player: ServerPlayer): MoriaPlayer {
 
     override val ping: Int
         get() = player.connection.latency()
+
+    override val afkDuration: Duration
+        get() = (Util.getMillis() - this.player.lastActionTime).toDuration(DurationUnit.MILLISECONDS)
+
+    override fun resetAfkDuration() {
+        player.resetLastActionTime()
+    }
+
+    override fun sendMessage(text: Component) {
+        player.sendMessage(text)
+    }
 }

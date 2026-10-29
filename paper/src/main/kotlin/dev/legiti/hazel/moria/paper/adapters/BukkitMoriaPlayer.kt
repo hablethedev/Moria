@@ -3,8 +3,11 @@ package dev.legiti.hazel.moria.paper.adapters
 import dev.legiti.hazel.moria.core.compat.MoriaGamemode
 import dev.legiti.hazel.moria.core.compat.MoriaLocation
 import dev.legiti.hazel.moria.core.compat.MoriaPlayer
+import net.kyori.adventure.text.Component
 import org.bukkit.GameMode
+import kotlin.time.Duration
 import java.util.UUID
+import kotlin.time.toKotlinDuration
 
 class BukkitMoriaPlayer(private val player: org.bukkit.entity.Player) : MoriaPlayer {
     override val uuid: UUID = player.uniqueId
@@ -31,4 +34,15 @@ class BukkitMoriaPlayer(private val player: org.bukkit.entity.Player) : MoriaPla
 
     override val ping: Int
         get() = player.ping
+
+    override val afkDuration: Duration
+        get() = player.idleDuration.toKotlinDuration()
+
+    override fun resetAfkDuration() {
+        player.resetIdleDuration()
+    }
+
+    override fun sendMessage(text: Component) {
+        player.sendMessage(text)
+    }
 }

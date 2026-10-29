@@ -26,4 +26,11 @@ class MoriaPaperListeners(private val plugin: MoriaPaper): MoriaEvents {
             }
         },plugin)
     }
+
+    override fun schedule(seconds: Double, runnable: () -> Unit) {
+        plugin.server.scheduler.runTaskTimer(plugin,
+            Runnable { runnable() },
+            (seconds * (plugin.targetTickRate / 2)).toLong() /* wait 1/2 of time first */,
+            (seconds * (plugin.targetTickRate)).toLong() )
+    }
 }

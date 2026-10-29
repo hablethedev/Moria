@@ -2,6 +2,7 @@ package dev.legiti.hazel.moria.core.logic.command
 
 import dev.legiti.hazel.moria.core.compat.MoriaPlatform
 import dev.legiti.hazel.moria.core.compat.MoriaSender
+import dev.legiti.hazel.moria.core.logic.command.helper.onlinePlayerSuggestions
 import org.incendo.cloud.CommandManager
 import org.incendo.cloud.component.CommandComponent
 import org.incendo.cloud.parser.standard.StringParser
